@@ -15,7 +15,7 @@
 
 VERBOSE=false
 VERBOSE_OPT=""
-SB_REPO="https://github.com/saltyorg/sb.git"
+SB_REPO="https://github.com/heihachi/sb.git"
 SB_PATH="/srv/git/sb"
 SB_INSTALL_SCRIPT="$SB_PATH/sb_install.sh"
 SCRIPT_PATH="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/$(basename "${BASH_SOURCE[0]}")"
@@ -73,7 +73,7 @@ done
 release=$(lsb_release -cs)
 
 # Add more releases like (focal|jammy)$
-if [[ $release =~ (focal|jammy)$ ]]; then
+if [[ $release =~ (focal|jammy|bullseye)$ ]]; then
     echo "$release is currently supported."
 elif [[ $release =~ (placeholder)$ ]]; then
     echo "$release is currently in testing."
